@@ -6,7 +6,8 @@ const forecast = require("./utils/forecast");
 
 const app = express();
 const port = process.env.PORT || 3001;
-
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "../client/build")));
 app.use(cors());
 
 app.get("/weather", (req, res) => {
